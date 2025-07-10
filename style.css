@@ -27,9 +27,9 @@ header {
 }
 
 .logo {
-  color: #fff;
+  color: #ff0000;
   margin-left: 1rem;
-  font-size: 1.5rem;
+  font-size: rem;
   font-weight: bold;
 }
 
@@ -159,7 +159,7 @@ main {
     align-items: center;
   }
   .logo {
-    font-size: 1.2rem;
+    font-size: 2rem;
     margin: 0;
   }
   .search {
@@ -167,4 +167,61 @@ main {
     padding: 0.5rem 1rem;
     margin: 0 auto;
   }
+}
+
+#footer {
+  background-color: #000000;
+  padding: 20px; 
+}
+
+.footer-column {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-column a, h3, p {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-links {
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.social-links a:hover .fa-facebook-f {
+    color: #3b5998;
+}
+
+.social-links a:hover .fa-twitter {
+    color: #1da1f2;
+}
+
+.social-links a:hover .fa-instagram {
+    color: #e1306c;
+}
+
+.fa-whatsapp:hover {
+    color: #25D366;
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.copyright p {
+    font-size: 14px;
+    margin: 0;
 }
