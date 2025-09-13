@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">MOVIEMAVEN</a>
+    </header>
+
+    <main id="movie-details-container"></main>
+
+    <script>
+      const movieDetailsContainer = document.getElementById('movie-details-container')
+      const selectedMovieData = localStorage.getItem('selectedMovie')
+      if (selectedMovieData) {
+        const movie = JSON.parse(selectedMovieData)
+        const detailsEl = document.createElement('div')
+        detailsEl.classList.add('movie-details')
+        detailsEl.innerHTML = `
+          <img src="${movie.poster}" alt="${movie.title}">
+          <h1>${movie.title}</h1>
+          <h3>Rating: <span class="${getClassByRate(movie.rating)}">${movie.rating}</span></h3>
+          <p>${movie.overview}</p>
+          <a href="index.html" class="back-btn">Go Back</a>
+        `
+        movieDetailsContainer.appendChild(detailsEl)
+        function getClassByRate(vote) {
+          if (vote >= 8) {
+            return 'green'
+          } else if (vote >= 5) {
+            return 'orange'
+          } else {
+            return 'red'
+          }
+        }
+      } else {
+        movieDetailsContainer.innerHTML = '<h2>No movie data found. Please go back to the home page.</h2>'
+      }
+    </script>
+    
+    <footer id="footer">
+      <div class="footer-column">
+        <h3>CREATED WITH 🩷 BY KARUN</h3>
+        <p>Email: <a href="mailto:karunbinny867@gmail.com">karunbinny867@gmail.com</a></p>
+        <ul class="social-links">
+          <li><a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://wa.me/+917994444938" target="_blank" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
